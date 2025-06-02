@@ -26,6 +26,7 @@ public class DoctorServiceIMPL implements DoctorService {
             // Prepare the SQL statement
             String sql = "INSERT INTO doctors (name, age, email, specility) VALUES (?, ?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
             preparedStatement.setString(1, doctorDto.getName());
             preparedStatement.setInt(2, doctorDto.getAge());
             preparedStatement.setString(3, doctorDto.getEmail());

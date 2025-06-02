@@ -35,7 +35,9 @@ public class SaveDoctorController {
         String email = txtEmail.getText();
         String specillaity = txtSpecillaity.getText();
 
-        DoctorDto doctorDto = new DoctorDto();
+        DoctorDto doctorDto = new DoctorDto(name,age,email,specillaity);
+
+
 
         DoctorService service = new DoctorServiceIMPL();
 

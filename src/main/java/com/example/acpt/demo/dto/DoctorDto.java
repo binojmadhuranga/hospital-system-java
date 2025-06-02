@@ -58,7 +58,7 @@ public class DoctorDto {
     }
 
 
-    public DoctorDto() {
+    public DoctorDto( String name,int age, String email, String specialization) {
         this.name = name;
         this.age = age; // Default age if isn't provided
         this.email = email;
