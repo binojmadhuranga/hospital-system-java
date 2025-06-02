@@ -57,6 +57,7 @@ public class DoctorDto {
         this.specialization = specialization;
     }
 
+
     public DoctorDto() {
         this.name = name;
         this.age = age; // Default age if isn't provided
