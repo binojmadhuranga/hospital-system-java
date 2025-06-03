@@ -1,5 +1,6 @@
 package com.example.acpt.demo.controller;
 
+import com.example.acpt.demo.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,17 +17,18 @@ public class MenuController {
 
 
     @FXML
-    private AnchorPane menuScene;
+    private AnchorPane root ;
 
 
     @FXML
     void Add(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/acpt/demo/AddForm.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
+
+            Stage stage = (Stage) root.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("save-doctor.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
+
         } catch (IOException e) {
             e.printStackTrace(); // You can show an alert instead if you want
         }
@@ -35,24 +37,23 @@ public class MenuController {
     @FXML
     void Update(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("update-doctor.fxml")));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
+            Stage stage = (Stage) root.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("update-doctor.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
-            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+
     @FXML
     void View(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/acpt/demo/load-all.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
+            Stage stage = (Stage) root.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("load-all.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
-            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -61,11 +62,10 @@ public class MenuController {
     @FXML
     void delete(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/acpt/demo/delete-doctor.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
+            Stage stage = (Stage) root.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("delete-doctor.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
-            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
