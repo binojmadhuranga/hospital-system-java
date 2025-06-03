@@ -180,7 +180,8 @@ public class DoctorServiceIMPL implements DoctorService {
             ResultSet resultSet = stm.executeQuery();
 
             while (resultSet.next()) {
-                doctorDtos.add(new DoctorDto(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getString(4), resultSet.getString(5)));
+                doctorDtos.add(new DoctorDto(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getString(4),
+                        resultSet.getString(5)));
             }
 
             return doctorDtos;

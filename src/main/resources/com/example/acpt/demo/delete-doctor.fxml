@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.acpt.demo.controller.DeleteDoctor"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.acpt.demo.controller.DeleteDoctor">
+   <children>
+      <Label layoutX="199.0" layoutY="41.0" prefHeight="48.0" prefWidth="246.0" text="Delete Doctor" textAlignment="JUSTIFY" textFill="#cf2b2b">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" layoutX="89.0" layoutY="160.0" prefHeight="26.0" prefWidth="370.0" promptText="Type ID Here" />
+      <Button layoutX="259.0" layoutY="255.0" mnemonicParsing="false" onAction="#Delete" prefHeight="26.0" prefWidth="63.0" text="Delete" textFill="#bf2424" />
+   </children>
 </AnchorPane>
