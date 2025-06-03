@@ -6,12 +6,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
 
 public class MenuController {
+
+
+    @FXML
+    private AnchorPane menuScene;
+
 
     @FXML
     void Add(ActionEvent event) {

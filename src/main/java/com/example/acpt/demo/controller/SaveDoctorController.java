@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 public class SaveDoctorController {
 
@@ -22,6 +23,9 @@ public class SaveDoctorController {
 
     @FXML
     private TextField txtSpecillaity;
+
+    @FXML
+    private AnchorPane saveScene;
 
     @FXML
     void cancel(ActionEvent event) {
