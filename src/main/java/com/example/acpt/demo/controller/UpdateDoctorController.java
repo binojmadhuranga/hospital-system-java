@@ -17,6 +17,9 @@ public class UpdateDoctorController {
     private TextField txtId;
 
     @FXML
+    private TextField txtEmail;
+
+    @FXML
     private TextField txtName;
 
     @FXML
@@ -46,34 +49,32 @@ public class UpdateDoctorController {
     @FXML
     void update(ActionEvent event) {
 
+        int id = Integer.parseInt(txtId.getText());
         String name = txtName.getText();
         int age = Integer.parseInt(txtAge.getText());
-      //  String email = txtEmail.getText();
+        String email = txtEmail.getText();
         String specillaity = txtSpecial.getText();
 
-        DoctorDto doctorDto = new DoctorDto();
+        DoctorDto doctorDto = new DoctorDto(name,age,email,specillaity);
 
         DoctorService service = new DoctorServiceIMPL();
 
-        boolean save = service.saveDoctor(doctorDto);
+        boolean save = service.updateDoctor(id, doctorDto);
 
         if (save) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.setHeaderText("This is a JavaFX Alert");
-            alert.setContentText("Doctor Save Successfully.");
+            alert.setContentText("Doctor update Successfully.");
             alert.showAndWait();
 
         } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.setHeaderText("This is a JavaFX Alert");
-            alert.setContentText("Doctor Save failed.");
+            alert.setContentText("Doctor update failed.");
             alert.showAndWait();
         }
-
-
-
 
 
     }

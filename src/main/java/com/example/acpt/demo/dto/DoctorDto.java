@@ -9,6 +9,8 @@ public class DoctorDto {
     private String specialization;
 
 
+
+
     public int getId() {
         return id;
     }
@@ -47,6 +49,11 @@ public class DoctorDto {
 
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
+    }
+
+
+    public DoctorDto() {
+
     }
 
     public DoctorDto(int id, String name,int age, String email, String specialization) {

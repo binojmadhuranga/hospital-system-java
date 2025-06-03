@@ -49,7 +49,6 @@ public class DoctorServiceIMPL implements DoctorService {
 
     }
 
-
     @Override
     public DoctorDto getDoctorById(int id) {
 
