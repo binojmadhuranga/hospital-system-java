@@ -53,6 +53,7 @@ public class loadAllController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Load all doctors when the controller is initialized
         DoctorService service = new DoctorServiceIMPL();
         List<DoctorDto> allDoctors = service.getAllDoctors();
 
