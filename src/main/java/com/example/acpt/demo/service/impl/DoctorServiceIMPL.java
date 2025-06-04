@@ -7,6 +7,7 @@ import com.example.acpt.demo.service.DoctorService;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static java.lang.Class.forName;
 
@@ -27,6 +28,7 @@ public class DoctorServiceIMPL implements DoctorService {
             String sql = "INSERT INTO doctors (name, age, email, specility) VALUES (?, ?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
+            // Set the parameters for the prepared statement
             preparedStatement.setString(1, doctorDto.getName());
             preparedStatement.setInt(2, doctorDto.getAge());
             preparedStatement.setString(3, doctorDto.getEmail());
@@ -67,6 +69,7 @@ public class DoctorServiceIMPL implements DoctorService {
 
             // Execute the query
             ResultSet resultSet = stm.executeQuery();
+            // Check if a doctor with the given ID exists
             if (resultSet.next()) {
                 return new DoctorDto(
                         resultSet.getInt("id"),
