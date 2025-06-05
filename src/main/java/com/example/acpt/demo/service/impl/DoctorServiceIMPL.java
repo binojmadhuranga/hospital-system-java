@@ -165,6 +165,7 @@ public class DoctorServiceIMPL implements DoctorService {
 
     @Override
     public List<DoctorDto> getAllDoctors() {
+        //create arraylist
         ArrayList<DoctorDto> doctorDtos = new ArrayList<>();
 
         try {
