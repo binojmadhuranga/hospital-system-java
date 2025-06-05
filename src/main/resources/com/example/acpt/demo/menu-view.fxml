@@ -12,9 +12,9 @@
             <Font size="38.0" />
          </font>
       </Label>
-      <Button layoutX="158.0" layoutY="118.0" mnemonicParsing="false" onAction="#Add" prefHeight="13.0" prefWidth="246.0" text="Add New Doctor" />
-      <Button layoutX="158.0" layoutY="162.0" mnemonicParsing="false" onAction="#Update" prefHeight="13.0" prefWidth="246.0" text="Update Doctor" />
-      <Button layoutX="158.0" layoutY="200.0" mnemonicParsing="false" onAction="#View" prefHeight="13.0" prefWidth="246.0" text="View All Doctors" />
-      <Button layoutX="158.0" layoutY="237.0" mnemonicParsing="false" onAction="#delete" prefHeight="13.0" prefWidth="246.0" text="Delete Doctors" />
+      <Button layoutX="158.0" layoutY="118.0" mnemonicParsing="false" onAction="#Add" prefHeight="13.0" prefWidth="246.0" text="Add New Doctor" textFill="#151b8a" />
+      <Button layoutX="158.0" layoutY="162.0" mnemonicParsing="false" onAction="#Update" prefHeight="13.0" prefWidth="246.0" text="Update Doctor" textFill="#686f11" />
+      <Button layoutX="158.0" layoutY="200.0" mnemonicParsing="false" onAction="#View" prefHeight="13.0" prefWidth="246.0" text="View All Doctors" textFill="#2eab15" />
+      <Button layoutX="158.0" layoutY="237.0" mnemonicParsing="false" onAction="#delete" prefHeight="13.0" prefWidth="246.0" text="Delete Doctors" textFill="#f21111" />
    </children>
 </AnchorPane>
