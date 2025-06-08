@@ -21,12 +21,8 @@ public class DoctorServiceIMPL implements DoctorService {
     @Override
     public boolean saveDoctor(DoctorDto doctorDto) {
         try {
-            // Load the JDBC driver
-            forName("com.mysql.cj.jdbc.Driver");
 
-
-            // Establish a connection to the database
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/afsd_hospital", "root", "1235");
+            Connection connection = DBConnection.getDbconnection().getConnection();
 
             // Prepare the SQL statement
             String sql = "INSERT INTO doctors (name, age, email, specility) VALUES (?, ?, ?, ?)";
@@ -60,11 +56,7 @@ public class DoctorServiceIMPL implements DoctorService {
 
         try {
 
-            forName("com.mysql.cj.jdbc.Driver");
-
-
-            // Establish a connection to the database
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/afsd_hospital", "root", "1235");
+             Connection connection = DBConnection.getDbconnection().getConnection();
 
             // Prepare the SQL Quary
             PreparedStatement stm = connection.prepareStatement("SELECT * FROM doctors WHERE id = ?");
@@ -102,12 +94,7 @@ public class DoctorServiceIMPL implements DoctorService {
 
         try {
             // Load the JDBC driver
-            forName("com.mysql.cj.jdbc.Driver");
-
-
-            // Establish a connection to the database
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/afsd_hospital", "root", "1235");
-
+            Connection connection = DBConnection.getDbconnection().getConnection();
             // Prepare the SQL statement
 
             PreparedStatement stm = connection.prepareStatement("update doctors set name = ?, age = ?,email=?,specility=? where id = ?");
@@ -139,10 +126,7 @@ public class DoctorServiceIMPL implements DoctorService {
     public boolean deleteDoctor(int id) {
         try {
             // Load the JDBC driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            // Establish a connection to the database
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/afsd_hospital", "root", "1235");
+            Connection connection = DBConnection.getDbconnection().getConnection();
 
             // Prepare the SQL statement
             String sql = "DELETE FROM doctors WHERE id = ?";
