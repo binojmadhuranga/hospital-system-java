@@ -1,6 +1,7 @@
 package com.example.acpt.demo.service.impl;
 
 
+import com.example.acpt.demo.db.DBConnection;
 import com.example.acpt.demo.dto.DoctorDto;
 import com.example.acpt.demo.service.DoctorService;
 
@@ -13,6 +14,9 @@ import static java.lang.Class.forName;
 
 public class DoctorServiceIMPL implements DoctorService {
 
+//    DBConnection dbconnection = DBConnection.getDbconnection();
+//    DBConnection dbConnection1 = DBConnection.getDbconnection();
+//    DBConnection dbConnection2 = DBConnection.getDbconnection();
 
     @Override
     public boolean saveDoctor(DoctorDto doctorDto) {
