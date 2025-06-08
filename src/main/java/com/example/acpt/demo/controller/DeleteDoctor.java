@@ -1,5 +1,6 @@
 package com.example.acpt.demo.controller;
 
+import com.example.acpt.demo.dto.DoctorDto;
 import com.example.acpt.demo.service.DoctorService;
 import com.example.acpt.demo.service.impl.DoctorServiceIMPL;
 import javafx.event.ActionEvent;
@@ -8,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
 public class DeleteDoctor {
+
 
 
 
