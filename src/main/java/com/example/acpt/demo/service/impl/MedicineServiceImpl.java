@@ -12,6 +12,13 @@ import static java.lang.Class.forName;
 
 public class MedicineServiceImpl implements MedicineService {
 
+
+
+
+
+
+
+
     @Override
     public boolean saveMedicine(MedicineDto medicineDto) {
         try {
@@ -85,8 +92,10 @@ public class MedicineServiceImpl implements MedicineService {
         }
     }
 
-    @Override
+
     public MedicineDto getMedicineById(int id) {
+        MedicineDto medicineDto = null;
+
         try {
             Connection connection = DBConnection.getDbconnection().getConnection();
 
@@ -97,7 +106,7 @@ public class MedicineServiceImpl implements MedicineService {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                return new MedicineDto(
+                medicineDto = new MedicineDto(
                         resultSet.getInt("id"),
                         resultSet.getString("name"),
                         resultSet.getInt("quantity"),
@@ -105,16 +114,20 @@ public class MedicineServiceImpl implements MedicineService {
                 );
             }
 
+            resultSet.close();
             preparedStatement.close();
             connection.close();
 
-            return null;
-
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
         }
+
+        return medicineDto;
     }
+
+
+
+
 
     @Override
     public List<MedicineDto> getAllMedicines() {
