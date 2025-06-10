@@ -36,7 +36,7 @@ public class MedicineServiceImpl implements MedicineService {
 
             resultSet.close();
             preparedStatement.close();
-            connection.close();
+          //  connection.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -44,15 +44,6 @@ public class MedicineServiceImpl implements MedicineService {
 
         return medicineDto;
     }
-
-
-
-
-
-
-
-
-
 
 
 //
@@ -132,8 +123,6 @@ public class MedicineServiceImpl implements MedicineService {
 //            return false;
 //        }
 //    }
-
-
 
 
 //    @Override

@@ -61,13 +61,16 @@ public class OrderView {
 
     @FXML
     void docSearch(ActionEvent event) {
-
         int id = Integer.parseInt(txtDocId.getText());
         DoctorService service = new DoctorServiceIMPL();
         DoctorDto doctorDto = service.getDoctorById(id);
+        if (doctorDto == null) {
+            txtDocName.setText("Not found");
+            txtSpecial.setText("");
+            return;
+        }
         txtDocName.setText(doctorDto.getName());
         txtSpecial.setText(doctorDto.getSpecialization());
-
     }
 
     @FXML

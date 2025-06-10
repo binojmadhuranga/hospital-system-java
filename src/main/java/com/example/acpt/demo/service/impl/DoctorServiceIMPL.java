@@ -56,7 +56,7 @@ public class DoctorServiceIMPL implements DoctorService {
 
         try {
 
-             Connection connection = DBConnection.getDbconnection().getConnection();
+            Connection connection = DBConnection.getDbconnection().getConnection();
 
             // Prepare the SQL Quary
             PreparedStatement stm = connection.prepareStatement("SELECT * FROM doctors WHERE id = ?");
@@ -74,17 +74,14 @@ public class DoctorServiceIMPL implements DoctorService {
                         resultSet.getString("email"),
                         resultSet.getString("specility")
                 );
-            } else {
-                return null; // No doctor found with the given ID)
-
             }
 
 
         } catch (Exception e) {
             e.printStackTrace();
-            return null; // Return null in case of an error
+            // Return null in case of an error
         }
-
+        return null;
 
     }
 
