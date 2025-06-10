@@ -59,14 +59,38 @@ public class OrderView {
     private ArrayList<AppoinmentDetailDto> appoinmentDetailDtos;
 
 
+    @FXML
+    void docSearch(ActionEvent event) {
+
+        int id = Integer.parseInt(txtDocId.getText());
+        DoctorService service = new DoctorServiceIMPL();
+        DoctorDto doctorDto = service.getDoctorById(id);
+        txtDocName.setText(doctorDto.getName());
+        txtSpecial.setText(doctorDto.getSpecialization());
+
+    }
+
+    @FXML
+    void medSearch(ActionEvent event) {
+
+        int id = Integer.parseInt(txtMedcineNo.getText());
+
+        MedicineService medicineService = new MedicineServiceImpl();
+        MedicineDto medicineDto = medicineService.getMedicineById(id);
+        txtPrice.setText(String.valueOf(medicineDto.getUnitPrice()));
+        txtQtyAv.setText(String.valueOf(medicineDto.getQuantity()));
+        txtMedicine.setText(medicineDto.getName());
+
+    }
+
 
     @FXML
     void addCart(ActionEvent event) {
 
-       double id = Double.parseDouble(txtMedcineNo.getText());
-       String medicineName = txtMedicine.getText();
+        double id = Double.parseDouble(txtMedcineNo.getText());
+        String medicineName = txtMedicine.getText();
         int qty = Integer.parseInt(txtQty.getText());
-        double unitPrice  = Integer.parseInt(txtPrice.getText());
+        double unitPrice = Integer.parseInt(txtPrice.getText());
         double totalPrice = qty * unitPrice;
 
 
@@ -81,33 +105,6 @@ public class OrderView {
     void complete(ActionEvent event) {
 
     }
-
-    @FXML
-    void docSearch(ActionEvent  event) {
-
-        int id = Integer.parseInt(txtDocId.getText());
-        DoctorService service = new DoctorServiceIMPL();
-        DoctorDto doctorDto = service.getDoctorById(id);
-        txtDocName.setText(doctorDto.getName());
-        txtSpecial.setText(doctorDto.getSpecialization());
-
-    }
-
-    @FXML
-    void medSearch(ActionEvent  event) {
-
-        int id = Integer.parseInt(txtMedcineNo.getText());
-
-        MedicineService medicineService = new MedicineServiceImpl();
-        MedicineDto medicineDto = medicineService.getMedicineById(id);
-        txtPrice.setText(String.valueOf(medicineDto.getUnitPrice()));
-        txtQtyAv.setText(String.valueOf(medicineDto.getQuantity()));
-        txtMedicine.setText(medicineDto.getName());
-
-
-    }
-
-
 
 
 }
