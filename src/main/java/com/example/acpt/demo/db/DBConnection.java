@@ -21,7 +21,6 @@ public class DBConnection {
 
         forName("com.mysql.cj.jdbc.Driver");
 
-
         // Establish a connection to the database
         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/afsd_hospital", "root", "1235");
 
