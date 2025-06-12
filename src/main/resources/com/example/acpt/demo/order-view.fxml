@@ -34,12 +34,13 @@
         </columns>
       </TableView>
       <Button layoutX="579.0" layoutY="529.0" mnemonicParsing="false" onAction="#complete" prefHeight="30.0" prefWidth="209.0" style="-fx-background-color: green;" text="COMPLETE APPOINMENT" textFill="#fff8f8" />
-      <Label fx:id="total" layoutX="60.0" layoutY="536.0" prefHeight="26.0" prefWidth="74.0" text="Total" textFill="#1e7b06">
+      <Label fx:id="total" layoutX="34.0" layoutY="524.0" prefHeight="26.0" prefWidth="74.0" text="Total" textFill="#1e7b06">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
       <TextField fx:id="txtDocId" layoutX="34.0" layoutY="133.0" onAction="#docSearch" promptText="Doc ID" />
       <TextField fx:id="txtDocName" layoutX="220.0" layoutY="133.0" promptText="DOC Name" />
+      <TextField fx:id="txtSum" layoutX="109.0" layoutY="531.0" />
    </children>
 </AnchorPane>

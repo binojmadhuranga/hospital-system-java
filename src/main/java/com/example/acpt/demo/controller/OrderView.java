@@ -60,6 +60,10 @@ public class OrderView {
     private TextField txtSpecial;
 
     @FXML
+    private TextField txtSum;
+
+
+    @FXML
     private TableColumn<AppoinmentDetailDto, Number> colId;
     @FXML
     private TableColumn<AppoinmentDetailDto, String> colName;
@@ -72,6 +76,7 @@ public class OrderView {
 
     private ObservableList<AppoinmentDetailDto> appoinmentDetailDtos;
 
+
     @FXML
     public void initialize() {
         appoinmentDetailDtos = FXCollections.observableArrayList();
@@ -81,7 +86,10 @@ public class OrderView {
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         colTotal.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
         table.setItems(appoinmentDetailDtos);
+
+
     }
+
 
     @FXML
     void docSearch(ActionEvent event) {
@@ -110,6 +118,7 @@ public class OrderView {
 
     }
 
+    double sum = 0.0;  // Initialize sum to 0
 
     @FXML
     void addCart(ActionEvent event) {
@@ -119,9 +128,13 @@ public class OrderView {
         double unitPrice = Double.parseDouble(txtPrice.getText());
         double totalPrice = qty * unitPrice;
 
+
+        sum += totalPrice;  // Add the new total price to the sum
+
+        txtSum.setText(String.valueOf(sum));
+
         AppoinmentDetailDto appoinmentDetailDto = new AppoinmentDetailDto(id, medicineName, qty, unitPrice, totalPrice);
         appoinmentDetailDtos.add(appoinmentDetailDto);
-
 
 
     }
@@ -129,7 +142,9 @@ public class OrderView {
     @FXML
     void complete(ActionEvent event) {
 
+
     }
 
 
 }
+
