@@ -54,6 +54,7 @@ public class SaveDoctorController {
             alert.setContentText("Doctor Save Successfully.");
             alert.showAndWait();
 
+
         } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
