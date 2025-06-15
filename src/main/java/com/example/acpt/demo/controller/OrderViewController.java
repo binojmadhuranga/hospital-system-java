@@ -1,6 +1,7 @@
 package com.example.acpt.demo.controller;
 
 import com.example.acpt.demo.dto.AppoinmentDetailDto;
+import com.example.acpt.demo.dto.AppoinmentDto;
 import com.example.acpt.demo.dto.DoctorDto;
 import com.example.acpt.demo.dto.MedicineDto;
 import com.example.acpt.demo.service.DoctorService;
@@ -16,6 +17,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.time.LocalDate;
 
 public class OrderViewController {
 
@@ -138,7 +141,14 @@ public class OrderViewController {
     @FXML
     void complete(ActionEvent event) {
 
+        LocalDate currentDate = LocalDate.now();
+        // Convert date to String using default format (ISO-8601)
+        String dateString = currentDate.toString();
 
+        int docId = Integer.parseInt(txtDocId.getText()); //get doctor id
+        double doctorFee = Double.parseDouble(txtFee.getText());  //doctor price
+
+        AppoinmentDto appoinmentDto = new AppoinmentDto(dateString,sum, docId, doctorFee, appoinmentDetailDtos);
 
 
     }

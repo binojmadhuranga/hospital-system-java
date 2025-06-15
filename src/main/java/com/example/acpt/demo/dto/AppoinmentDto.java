@@ -4,7 +4,7 @@ import java.util.List;
 
 public class AppoinmentDto {
 
-    private String data;
+    private String date;
     private double totalAmount;
     private int doctorId;
     private double docFee;
@@ -13,11 +13,11 @@ public class AppoinmentDto {
 
 
     public String getData() {
-        return data;
+        return date;
     }
 
     public void setData(String data) {
-        this.data = data;
+        this.date = data;
     }
 
     public double getTotalAmount() {
@@ -51,4 +51,14 @@ public class AppoinmentDto {
     public void setAppoinmentDetailDtos(List<AppoinmentDetailDto> appoinmentDetailDtos) {
         this.appoinmentDetailDtos = appoinmentDetailDtos;
     }
+
+    public AppoinmentDto (String date, double totalAmount, int doctorId, double docFee, List<AppoinmentDetailDto> appoinmentDetailDtos) {
+        this.date = date;
+        this.totalAmount = totalAmount;
+        this.doctorId = doctorId;
+        this.docFee = docFee;
+        this.appoinmentDetailDtos = appoinmentDetailDtos;
+
+    }
+
 }
