@@ -6,8 +6,10 @@ import com.example.acpt.demo.dto.DoctorDto;
 import com.example.acpt.demo.dto.MedicineDto;
 import com.example.acpt.demo.service.DoctorService;
 import com.example.acpt.demo.service.MedicineService;
+import com.example.acpt.demo.service.OrderService;
 import com.example.acpt.demo.service.impl.DoctorServiceIMPL;
 import com.example.acpt.demo.service.impl.MedicineServiceImpl;
+import com.example.acpt.demo.service.impl.OrderServiceIMPL;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -149,6 +151,10 @@ public class OrderViewController {
         double doctorFee = Double.parseDouble(txtFee.getText());  //doctor price
 
         AppoinmentDto appoinmentDto = new AppoinmentDto(dateString,sum, docId, doctorFee, appoinmentDetailDtos);
+
+        OrderService orderService = new OrderServiceIMPL();
+        boolean isSaved = orderService.makeAppointment(appoinmentDto);
+
 
 
     }
