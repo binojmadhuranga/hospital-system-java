@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="587.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.acpt.demo.controller.OrderView">
+<AnchorPane prefHeight="587.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.acpt.demo.controller.OrderViewController">
    <children>
       <Label layoutX="258.0" layoutY="36.0" prefHeight="38.0" prefWidth="312.0" text="Appoinments" textFill="#22a937">
          <font>
